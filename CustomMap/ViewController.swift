@@ -119,6 +119,29 @@ class ViewController: UIViewController {
 //        mapView?.add(polyline)
 //    }
     
+    //HELP DOCUMENT
+    /*
+Getting Tiles
+     https://tile.openstreetmap.org/19/376310/236341.png
+    
+     get GPX file
+     http://www.gpsvisualizer.com/map_input?form=google
+     
+     GPX Sample
+     http://www.gpsvisualizer.com/draw/
+     
+     Help Maps
+     https://www.openstreetmap.org/node/4869293622#map=5/2.109/52.075
+     
+     Demo Application
+     https://www.raywenderlich.com/158175/advanced-mapkit-tutorial-custom-tiles
+     
+     
+     Draw routes between two pointsa
+     https://www.ioscreator.com/tutorials/draw-route-mapkit-tutorial
+ 
+ 
+ */
     
     override func viewWillAppear(_ animated: Bool) {
         mapView.delegate = self as MKMapViewDelegate
