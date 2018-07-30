@@ -64,7 +64,7 @@
       <AdditionalOptions>
       </AdditionalOptions>
       <LocationScenarioReference
-         identifier = "../../CustomMap/JnetToKasani.gpx"
+         identifier = "../../CustomMap/test.gpx"
          referenceType = "0">
       </LocationScenarioReference>
    </LaunchAction>

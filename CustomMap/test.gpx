@@ -1,17 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<gpx version="1.1" creator="GPS Visualizer Sandbox http://www.gpsvisualizer.com/draw/" xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+<gpx>
 	<wpt lat="17.4400983" lon="78.3933352">
 		<name>Jnet</name>
 		<sym>Anchor</sym>
 	</wpt>
-	<trk>
-		<name></name>
-		<desc>Length: 175.3 m (575.1 ft)</desc>
-		<trkseg>
-			<trkpt lat="17.4401001" lon="78.3933174"></trkpt>
-			<trkpt lat="17.4401909" lon="78.3929164"></trkpt>
-			<trkpt lat="17.440292" lon="78.3922512"></trkpt>
-			<trkpt lat="17.4408306" lon="78.39227"></trkpt>
-		</trkseg>
-	</trk>
+    <wpt lat="17.4401001" lon="78.3933174">
+        <name>Jnet</name>
+        <sym>Anchor</sym>
+    </wpt>
+    <wpt lat="17.4401909" lon="78.3929164">
+        <name>Jnet</name>
+        <sym>Anchor</sym>
+    </wpt>
+    <wpt lat="17.440292" lon="78.3922512">
+        <name>Jnet</name>
+        <sym>Anchor</sym>
+    </wpt>
+    <wpt lat="17.4408306" lon="78.39227">
+        <name>Jnet</name>
+        <sym>Anchor</sym>
+    </wpt>
+	
 </gpx>
