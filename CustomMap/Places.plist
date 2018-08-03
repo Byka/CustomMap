@@ -24,13 +24,23 @@
 	</dict>
 	<dict>
 		<key>title</key>
-		<string>Los Angeles</string>
+		<string>Trisul Grand</string>
 		<key>description</key>
-		<string>Welcome to Los Angeles!</string>
+		<string>Welcome to Trisul</string>
 		<key>latitude</key>
 		<real>17.4402844</real>
 		<key>longitude</key>
 		<real>78.3922427</real>
 	</dict>
+    <dict>
+        <key>title</key>
+        <string>Vikram Hospital</string>
+        <key>description</key>
+        <string>Welcome to Vikram Hospital</string>
+        <key>latitude</key>
+        <real>17.440876</real>
+        <key>longitude</key>
+        <real>78.391730</real>
+    </dict>
 </array>
 </plist>

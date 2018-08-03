@@ -18,8 +18,10 @@ class ViewController: UIViewController {
     let locationManager = CLLocationManager()
    
     let places = Place.getPlaces()
-
     
+    
+
+    var myRoute : MKRoute!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,20 +35,21 @@ class ViewController: UIViewController {
         addPolyline()
         addPolygon()
         
-        //let initialRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 17.4405, longitude: 78.39264), span: MKCoordinateSpan(latitudeDelta: 0.000005, longitudeDelta: 0.000005))
+        let initialRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 17.4405, longitude: 78.39264), span: MKCoordinateSpan(latitudeDelta: 0.000005, longitudeDelta: 0.000005))
         
-//        let location = CLLocationCoordinate2D(latitude: 17.4405,longitude: 78.39264)
-//
-//
-//        let span = MKCoordinateSpanMake(0.10, 0.10)
-//        let region = MKCoordinateRegion(center: location, span: span)
-//        mapView.setRegion(region, animated: true)
+        let location = CLLocationCoordinate2D(latitude: 17.4405,longitude: 78.39264)
+
+
+        let span = MKCoordinateSpanMake(0.19, 0.19)
+        let region = MKCoordinateRegion(center: location, span: span)
+        mapView.setRegion(region, animated: true)
         
         
         //mapView.region = initialRegion
         mapView.showsUserLocation = true
         mapView.showsCompass = true
         mapView.setUserTrackingMode(.followWithHeading, animated: true)
+        
         
         // 2.
         let sourceLocation = CLLocationCoordinate2D(latitude: 17.4406921, longitude: 78.3930128)
@@ -79,6 +82,7 @@ class ViewController: UIViewController {
         // 6.
         self.mapView.showAnnotations([sourceAnnotation,destinationAnnotation], animated: true )
         
+        
         // 7.
         let directionRequest = MKDirectionsRequest()
         directionRequest.source = sourceMapItem
@@ -106,10 +110,13 @@ class ViewController: UIViewController {
             
             let rect = route.polyline.boundingMapRect
             self.mapView.setRegion(MKCoordinateRegionForMapRect(rect), animated: true)
+          
+        }
         
+            
     }
         
-    }
+    
     
     
 //    func addPolyline() {
@@ -140,7 +147,9 @@ Getting Tiles
      Draw routes between two pointsa
      https://www.ioscreator.com/tutorials/draw-route-mapkit-tutorial
  
- 
+     https://www.google.com/maps/@2.0181856,45.3039425,411m/data=!3m1!1e3
+     
+     http://mt1.google.com/vt/lyrs=m&x=376313&y=236342&z=19
  */
     
     override func viewWillAppear(_ animated: Bool) {
@@ -156,7 +165,7 @@ Getting Tiles
         tileRenderer = MKTileOverlayRenderer(tileOverlay: overlay)
         
         
-        overlay.minimumZ = 19
+        overlay.minimumZ = 16
         overlay.maximumZ = 19
         
  
@@ -205,6 +214,8 @@ Getting Tiles
         
         mapView?.add(polyline)
     }
+    
+    
     
     func addPolygon() {
         var locations = places.map { $0.coordinate }
@@ -261,10 +272,18 @@ extension ViewController: MKMapViewDelegate {
             return renderer
             
         }*/ else if overlay is MKPolyline {
+            
             let renderer = MKPolylineRenderer(overlay: overlay)
             renderer.strokeColor = UIColor.orange
             renderer.lineWidth = 3
             return renderer
+ 
+            
+//            let pr = MKPolylineRenderer(overlay: overlay)
+//            pr.strokeColor = UIColor.blue.withAlphaComponent(0.5)
+//            pr.lineWidth = 2
+//            pr.lineDashPattern = [10, 10]
+//            return pr
             
         } /*else if overlay is MKPolygon {
             let renderer = MKPolygonRenderer(polygon: overlay as! MKPolygon)
@@ -280,6 +299,7 @@ extension ViewController: MKMapViewDelegate {
     }
     
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+      
         guard let annotation = view.annotation as? Place, let title = annotation.title else { return }
         
         let alertController = UIAlertController(title: "Welcome to \(title)", message: "You've selected \(title)", preferredStyle: .alert)
@@ -288,5 +308,9 @@ extension ViewController: MKMapViewDelegate {
         present(alertController, animated: true, completion: nil)
     }
     
+    
+    
+
+            
 }
 
